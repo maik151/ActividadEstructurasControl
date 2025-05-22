@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividades JavaScript</title>
+  <!-- Enlace al archivo de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Actividades JavaScript</h1>
+    <p>Selecciona una actividad para probarla:</p>
+    <!-- Botones para cada actividad -->
+    <div class="buttons">
+      <button onclick="cargarScript('edadCategoria.js')">Actividad 1: Clasificación de edades</button>
+      <button onclick="cargarScript('tablaMultiplicar.js')">Actividad 2: Tabla de multiplicar</button>
+      <button onclick="cargarScript('tablasSeleccionadas.js')">Actividad 3: Tablas pares o impares</button>
+    </div>
+  </div>
+
+  <!-- Script para cargar dinámicamente los archivos JS -->
+  <script>
+    function cargarScript(archivo) {
+      // Elimina cualquier script cargado anteriormente
+      const anterior = document.getElementById("scriptEjercicio");
+      if (anterior) anterior.remove();
+
+      // Crea y agrega el nuevo script
+      const script = document.createElement("script");
+      script.src = archivo;
+      script.id = "scriptEjercicio";
+      document.body.appendChild(script);
+    }
+  </script>
+</body>
+</html>
